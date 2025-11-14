@@ -15,6 +15,47 @@ body {
   }
 }
 
+.navbar-container {
+  background-color: white;
+}
+
+.nav-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item a:hover, 
+.nav-item a:active {
+  text-decoration: underline;
+  color: #EFBF04;
+  border-color: #EFBF04;
+  border-width: 2px;
+}
+
+.footer {
+  position: absolute;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  text-align: center;
+}
 
 
 
