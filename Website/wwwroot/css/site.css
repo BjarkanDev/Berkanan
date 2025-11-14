@@ -3,8 +3,8 @@
   --primary-color-hover: lightgrey;
   --secondary-color: black;
   --secondary-color-hover: darkgrey;
-  --contrast-color: #EFBF04;
-  --contrast-color-hover: #fdc200;
+  --contrast-color: #c99d0f;
+  --contrast-color-hover: #EFBF04;
 }
 
 /* Rendering body */
@@ -28,7 +28,8 @@ body {
 /* Layout rendering */
 
 .navbar-container {
-  background-color: var(--primary-color)
+  background-color: var(--primary-color);
+  border-bottom: 3px var(--contrast-color-hover) solid;
 }
 
 .nav-item-container {
@@ -55,7 +56,7 @@ ul {
 
 .nav-item a:hover, 
 .nav-item a:active {
-  color: var(--contrast-color)
+  color: var(--contrast-color-hover)
 }
 
 .footer {
@@ -75,10 +76,39 @@ ul {
 */
 
 /* --Home-- */
+#Body-Home {
+
+}
+
+#Header-Home {
+  text-align: center;
+}
+
 
 /* --Portfolio-- */
 
+#Body-Portfolio {
+  
+}
+
+#Header-Portfolio {
+  text-align: center;
+}
+
 /* --About me-- */
+#Body-About {
+  
+}
 
+#Header-About {
+  text-align: center;
+}
 
+#Poem-About {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
 
+i {
+  color: var(--contrast-color);
+}
