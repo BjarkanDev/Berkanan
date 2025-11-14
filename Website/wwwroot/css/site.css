@@ -7,6 +7,7 @@
   --contrast-color-hover: #fdc200;
 }
 
+/* Rendering body */
 html {
   font-size: 16px;
   position: relative;
@@ -23,6 +24,8 @@ body {
     font-size: 18px;
   }
 }
+
+/* Layout rendering */
 
 .navbar-container {
   background-color: var(--primary-color)
@@ -43,8 +46,6 @@ ul {
   margin-right: 1.5rem;
   padding-bottom: 5px;
 }
-
-
 
 .nav-item a {
   text-decoration: none;
@@ -67,6 +68,17 @@ ul {
   text-align: center;
 }
 
+/* Individual pages 
+  - Home
+  - Portfolio
+  - About me
+*/
+
+/* --Home-- */
+
+/* --Portfolio-- */
+
+/* --About me-- */
 
 
 
