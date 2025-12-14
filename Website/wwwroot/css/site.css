@@ -8,6 +8,7 @@
 }
 
 /* Rendering body */
+
 html {
   font-size: 16px;
   position: relative;
@@ -24,6 +25,8 @@ body {
     font-size: 18px;
   }
 }
+
+
 
 /* Layout rendering */
 
@@ -74,8 +77,9 @@ ul {
 */
 
 /* --Home-- */
-#Body-Home {
-
+#Intro-Home {
+  text-align: center;
+  color: var(--secondary-color);
 }
 
 #Header-Home {
@@ -96,6 +100,20 @@ ul {
   color: var(--contrast-color);
 }
 
+#Main-Portfolio{
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.github-profile-badge{
+  display: flex; 
+  justify-content: center;
+}
+
+.github-profile-badge-name{
+  color: var(--secondary-color) !important; 
+}
+
 /* --About me-- */
 #Body-About {
 
@@ -109,6 +127,33 @@ ul {
 #Poem-About {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+}
+
+#Background-About {
+  text-align: center;
+  border-style: solid;
+  border-color: var(--contrast-color-hover);
+  border-left: 0;
+  border-right: 0;
+  
+}
+
+#Closer-About {
+  text-align: center;
+  border-bottom: var(--contrast-color-hover);
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+#Contact-About {
+  text-align: center;
+  border-bottom: var(--contrast-color-hover);
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0;
 }
 
 i {
