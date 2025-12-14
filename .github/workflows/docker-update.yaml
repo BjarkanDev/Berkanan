@@ -1,0 +1,26 @@
+name: Docker Image CI/CD to Docker Hub
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+  DOCKER_HUB_IMAGE: ${{ secrets.DOCKER_HUB_IMAGE }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build . -t $DOCKER_HUB_USERNAME/$DOCKER_HUB_IMAGE:latest
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_ACCESS_TOKEN
+          docker push $DOCKER_HUB_USERNAME/$DOCKER_HUB_IMAGE:latest
