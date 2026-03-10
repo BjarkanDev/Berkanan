@@ -1,4 +1,0 @@
-﻿# Website
-
-Personal website code repository
-
