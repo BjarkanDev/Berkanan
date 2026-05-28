@@ -131,27 +131,18 @@ ul {
 
 #Background-About {
   text-align: center;
-  border-style: solid;
-  border-color: var(--contrast-color-hover);
-  border-left: 0;
-  border-right: 0;
-  
-}
-
-#Closer-About {
-  text-align: center;
-  border-bottom: var(--contrast-color-hover);
-  border-style: solid;
-  border-left: 0;
-  border-right: 0;
+  border-top: 2px solid var(--contrast-color-hover);
+  border-bottom: 2px solid var(--contrast-color-hover);
 }
 
 #Contact-About {
   text-align: center;
-  border-bottom: var(--contrast-color-hover);
-  border-style: solid;
-  border-left: 0;
-  border-right: 0;
+  border-bottom: 2px solid var(--contrast-color-hover);
+}
+
+#Closer-About {
+  text-align: center;
+  border-bottom: 2px solid var(--contrast-color-hover); 
 }
 
 i {
