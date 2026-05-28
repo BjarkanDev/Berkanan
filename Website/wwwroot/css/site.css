@@ -142,20 +142,16 @@ ul {
   text-align: center;
   border-bottom: var(--contrast-color-hover);
   border-style: solid;
-  border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-radius: 0;
 }
 
 #Contact-About {
   text-align: center;
   border-bottom: var(--contrast-color-hover);
   border-style: solid;
-  border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-radius: 0;
 }
 
 i {
