@@ -445,6 +445,9 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .timeline__when { font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-text); margin-bottom: .3rem; }
 .timeline__item h3 { font-size: 1.5rem; margin-bottom: .2rem; }
 .timeline__where { color: var(--text-muted); margin: 0; }
+.timeline__detail { color: var(--text); font-size: .95rem; margin: .6rem 0 0; }
+.role { font-size: .95rem; color: var(--text) !important; border-left: 1px solid var(--accent); padding-left: .9rem; }
+.role strong { font-weight: 500; color: var(--text-strong); }
 
 .contact-list { list-style: none; padding: 0; margin: 0 auto; display: grid; gap: .75rem; max-width: 420px; }
 .contact-list a {
