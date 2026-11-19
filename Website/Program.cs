@@ -15,6 +15,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Show the styled 404 page (Pages/NotFound) for unknown URLs, keeping the 404 status code.
+app.UseStatusCodePagesWithReExecute("/404");
+
 app.UseRouting();
 
 app.UseAuthorization();

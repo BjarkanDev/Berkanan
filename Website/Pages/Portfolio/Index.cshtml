@@ -2,18 +2,91 @@
 @model PortfolioModel
 @{
     ViewData["Title"] = "Portfolio";
+    ViewData["Description"] = "Selected projects by Bjørn Sødal — autonomous vessels, embedded systems, VR simulation and web.";
 }
 
-<div id="Body-Portfolio">
-    <h1 id="Header-Portfolio">Portfolio</h1>
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow reveal">Portfolio</p>
+        <h1 class="reveal">Selected work</h1>
+        <p class="page-hero__lead reveal">Projects from studies, student organisations and my own workbench. More live on <a href="https://github.com/BjarkanDev" rel="noopener">GitHub</a>.</p>
+    </div>
+</section>
 
-    <h3 id="Main-Portfolio">Not much to see here yet, check out my GitHub for active projects:</h3>
+<section class="section section--flush-top">
+    <div class="container">
+        <div class="filters reveal" role="group" aria-label="Filter projects" data-filters>
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter" data-filter="autonomy" aria-pressed="false">Autonomy</button>
+            <button type="button" class="filter" data-filter="embedded" aria-pressed="false">Embedded</button>
+            <button type="button" class="filter" data-filter="vr" aria-pressed="false">VR</button>
+            <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+        </div>
 
-    <!-- GitHub Account Badge -->
-    <!-- courtesy of /Rapsssito : https://github.com/Rapsssito -->
-    <div class="github-profile-badge" data-user="BjarkanDev"></div>
-    <script src="https://cdn.jsdelivr.net/gh/Rapsssito/github-profile-badge@latest/src/widget.min.js"></script>
+        <!--
+            Add a project: copy one <article class="card">, set data-tags (space separated,
+            matching the filter buttons above) and replace the placeholder with an <img>.
+        -->
+        <div class="cards" data-cards>
 
-    
+            <article class="card reveal" data-tags="autonomy embedded">
+                <div class="card__media media-placeholder" data-label="Hugr Optimus">
+                    <!-- <img src="/img/projects/hugr-optimus.jpg" alt="Hugr Optimus" loading="lazy" /> -->
+                </div>
+                <div class="card__body">
+                    <p class="card__meta">SeaBotics &middot; UiA</p>
+                    <h2 class="card__title">Hugr Optimus</h2>
+                    <p>A fully autonomous surface vessel built by UiA students for national and international competitions. Successor to Hugr Primus.</p>
+                    <ul class="tags"><li>ROS 2 Jazzy</li><li>C/C++</li><li>Python</li><li>Docker</li></ul>
+                    <div class="card__links">
+                        <a class="link-arrow" href="https://github.com/SeaBotics/hugr_optimus" rel="noopener">Repository</a>
+                    </div>
+                </div>
+            </article>
 
-</div>
+            <article class="card reveal" data-tags="vr">
+                <div class="card__media media-placeholder" data-label="Traftec VR">
+                    <!-- <img src="/img/projects/traftec-vr.jpg" alt="Traftec VR simulator" loading="lazy" /> -->
+                </div>
+                <div class="card__body">
+                    <p class="card__meta">Bachelor project</p>
+                    <h2 class="card__title">Traftec VR Simulator</h2>
+                    <p>A prototype virtual-reality simulator developed as a bachelor project, backed by a companion database system written in Python.</p>
+                    <ul class="tags"><li>VR</li><li>Simulation</li><li>Python</li></ul>
+                    <div class="card__links">
+                        <a class="link-arrow" href="https://github.com/SolUrsi/Bachelor-Project" rel="noopener">Simulator</a>
+                        <a class="link-arrow" href="https://github.com/SolUrsi/Bachelor-Project-Database-System" rel="noopener">Database</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card reveal" data-tags="web">
+                <div class="card__media media-placeholder" data-label="Berkanan">
+                    <!-- <img src="/img/projects/berkanan.jpg" alt="Screenshot of berkanan.no" loading="lazy" /> -->
+                </div>
+                <div class="card__body">
+                    <p class="card__meta">Personal</p>
+                    <h2 class="card__title">berkanan.no</h2>
+                    <p>This site. ASP.NET Razor Pages in a Docker container, built and published to Docker Hub through GitHub Actions.</p>
+                    <ul class="tags"><li>.NET</li><li>Docker</li><li>CI/CD</li></ul>
+                    <div class="card__links">
+                        <a class="link-arrow" href="https://github.com/BjarkanDev/Berkanan" rel="noopener">Repository</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="empty-note" data-empty hidden>No projects in this category yet &mdash; check back soon.</p>
+    </div>
+</section>
+
+<section class="cta-band">
+    <div class="container cta-band__inner reveal">
+        <div>
+            <p class="eyebrow">More on GitHub</p>
+            <h2>Code, experiments and work in progress</h2>
+        </div>
+        <a class="btn btn--solid" href="https://github.com/BjarkanDev" rel="noopener">Visit GitHub</a>
+    </div>
+</section>

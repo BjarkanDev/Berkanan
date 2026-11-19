@@ -2,14 +2,143 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home";
+    ViewData["Description"] = "Bjørn Sødal — engineer building software that lets machines see, sense and navigate: embedded systems, computer vision, signal processing and autonomous vessels.";
 }
 
-<div id="Body-Home">
-    <h1 id="Header-Home">Home</h1>
+<!-- ============ Hero ============ -->
+<section class="hero" data-hero>
+    <!--
+        Hero video: drop your files in wwwroot/media/ with these names.
+        Until they exist the hero falls back to the pastel background below.
+    -->
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+           poster="/media/hero-poster.jpg" aria-hidden="true" data-hero-video>
+        <source src="/media/hero.webm" type="video/webm" />
+        <source src="/media/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__veil" aria-hidden="true"></div>
 
-    <div id="Intro-Home">
-        <h2>Welcome to Berkanan!</h2>
-        <p>This is my own personal website where I share my portfolio and talk a little about myself.</p>
-	<p>Feel free to explore and get in touch!</p>
+    <div class="container hero__content">
+        <p class="eyebrow reveal">Embedded &middot; Vision &middot; Autonomy</p>
+        <h1 class="hero__title reveal">Bjørn Sødal</h1>
+        <p class="hero__lead reveal">
+            I build the software that lets machines see, sense and navigate &mdash;
+            from embedded firmware to autonomous vessels.
+        </p>
+        <div class="hero__actions reveal">
+            <a class="btn btn--solid" href="/portfolio">View portfolio</a>
+            <a class="btn" href="/about#contact">Get in touch</a>
+        </div>
     </div>
-</div>
+
+    <a class="hero__scroll" href="#disciplines" aria-label="Scroll to content">
+        <span></span>
+    </a>
+</section>
+
+<!-- ============ Disciplines ============ -->
+<section class="section" id="disciplines">
+    <div class="container">
+        <header class="section-head reveal">
+            <p class="eyebrow">What I work with</p>
+            <h2>Disciplines</h2>
+            <p class="section-head__lead">A background in computer engineering and the Internet of Things, with a soft spot for anything that floats, flies or dives.</p>
+        </header>
+
+        <ul class="disciplines">
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="5" /><path d="M2 16s5-9 14-9 14 9 14 9-5 9-14 9S2 16 2 16z" /></svg>
+                <h3>Computer &amp; machine vision</h3>
+                <p>Perception pipelines that turn camera feeds into decisions.</p>
+            </li>
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16h4l3-8 4 16 4-12 3 8 2-4h8" /></svg>
+                <h3>Signal processing</h3>
+                <p>Filtering, sampling and making sense of noisy sensor data.</p>
+            </li>
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="9" width="14" height="14" /><path d="M13 9V4M19 9V4M13 28v-5M19 28v-5M9 13H4M9 19H4M28 13h-5M28 19h-5" /></svg>
+                <h3>Embedded systems</h3>
+                <p>Firmware close to the metal, where timing and power matter.</p>
+            </li>
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="22" r="2" /><path d="M10 17a8.5 8.5 0 0 1 12 0M6 13a14 14 0 0 1 20 0M2 9a20 20 0 0 1 28 0" /></svg>
+                <h3>Internet of Things</h3>
+                <p>Connected devices, from sensor node to the systems behind it.</p>
+            </li>
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 21h24l-4 6H8zM16 21V5l8 12h-8M16 9l-7 8h7" /></svg>
+                <h3>Autonomous vessels</h3>
+                <p>ASV and ROV systems that navigate on and below the surface.</p>
+            </li>
+            <li class="discipline reveal">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="7" cy="7" r="4" /><circle cx="25" cy="7" r="4" /><circle cx="7" cy="25" r="4" /><circle cx="25" cy="25" r="4" /><path d="M10 10l12 12M22 10L10 22" /><rect x="13" y="13" width="6" height="6" /></svg>
+                <h3>UAV development</h3>
+                <p>Drones and the flight software that keeps them in the air.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ Selected work ============ -->
+<section class="section section--tinted">
+    <div class="container">
+        <header class="section-head reveal">
+            <p class="eyebrow">Selected work</p>
+            <h2>Recent projects</h2>
+        </header>
+
+        <article class="feature reveal">
+            <div class="feature__media media-placeholder" data-label="Hugr Optimus">
+                <!-- Replace with: <img src="/img/projects/hugr-optimus.jpg" alt="Hugr Optimus on the water" loading="lazy" /> -->
+            </div>
+            <div class="feature__body">
+                <p class="eyebrow">SeaBotics &middot; University of Agder</p>
+                <h3>Hugr Optimus</h3>
+                <p>A fully autonomous surface vessel built by students at the University of Agder to compete in national and international competitions. Built on ROS&nbsp;2 Jazzy with C/C++ and Python, developed in a shared Docker environment with CI on every pull request.</p>
+                <ul class="tags"><li>ROS 2</li><li>C/C++</li><li>Python</li><li>ASV</li></ul>
+                <a class="link-arrow" href="https://github.com/SeaBotics/hugr_optimus" rel="noopener">View repository</a>
+            </div>
+        </article>
+
+        <article class="feature feature--flip reveal">
+            <div class="feature__media media-placeholder" data-label="Traftec VR">
+                <!-- Replace with: <img src="/img/projects/traftec-vr.jpg" alt="Traftec VR simulator" loading="lazy" /> -->
+            </div>
+            <div class="feature__body">
+                <p class="eyebrow">Bachelor project</p>
+                <h3>Traftec VR Simulator</h3>
+                <p>A prototype virtual-reality simulator developed as a bachelor project, together with a supporting database system written in Python.</p>
+                <ul class="tags"><li>VR</li><li>Simulation</li><li>Python</li></ul>
+                <a class="link-arrow" href="https://github.com/SolUrsi/Bachelor-Project" rel="noopener">View repository</a>
+            </div>
+        </article>
+
+        <div class="center reveal">
+            <a class="btn" href="/portfolio">All projects</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ Quote ============ -->
+<section class="section quote-section">
+    <div class="container container--narrow">
+        <figure class="quote reveal">
+            <blockquote>
+                <p>&ldquo;At <em>no</em> time are we ever in such complete <em>possession</em> of a journey, down to its last nook and cranny, as when we are busy with <em>preparations</em> for it.&rdquo;</p>
+            </blockquote>
+            <figcaption>Yukio Mishima</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- ============ Contact band ============ -->
+<section class="cta-band">
+    <div class="container cta-band__inner reveal">
+        <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Let&rsquo;s build something that moves</h2>
+        </div>
+        <a class="btn btn--solid" href="mailto:bjornsodal@gmail.com">Send an email</a>
+    </div>
+</section>

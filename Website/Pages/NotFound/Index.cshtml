@@ -1,0 +1,14 @@
+@page "/404"
+@{
+    ViewData["Title"] = "Page not found";
+    Response.StatusCode = 404;
+}
+
+<section class="page-hero page-hero--full">
+    <div class="container container--narrow center">
+        <p class="eyebrow">404</p>
+        <h1>Off the chart</h1>
+        <p class="page-hero__lead">The page you were looking for has drifted away, or never existed.</p>
+        <p><a class="btn" href="/">Back to home</a> <a class="btn btn--ghost" href="/portfolio">See portfolio</a></p>
+    </div>
+</section>

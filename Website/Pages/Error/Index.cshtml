@@ -4,16 +4,17 @@
     ViewData["Title"] = "Error";
 }
 
-<h1 class="">Error.</h1>
-<h2 class="">An error occurred while processing your request.</h2>
+<section class="page-hero page-hero--full">
+    <div class="container container--narrow center">
+        <p class="eyebrow">Something went wrong</p>
+        <h1>Rough waters</h1>
+        <p class="page-hero__lead">An error occurred while processing your request.</p>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+        @if (Model.ShowRequestId)
+        {
+            <p class="muted"><small>Request ID: <code>@Model.RequestId</code></small></p>
+        }
 
-<p>
-    <a asp-page="/Index/Index">Back to Home</a>
-</p>
+        <p><a class="btn" href="/">Back to home</a></p>
+    </div>
+</section>

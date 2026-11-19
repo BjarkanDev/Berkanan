@@ -1,43 +1,108 @@
 @page "/about"
 @model AboutModel
 @{
-    ViewData["Title"] = "About me";
+    ViewData["Title"] = "About";
+    ViewData["Description"] = "About Bjørn Sødal — computer engineer and IoT master's student working with embedded systems, computer vision, DSP and autonomous vessels.";
 }
 
-<div id="Body-About">
-    <h1 id="Header-About">About me</h1>
-
-    <!-- Poem -->
-    <div id="Poem-About">
-        <blockquote>
-            <h4> &ldquo;At <i>no</i> time are we ever in such complete <i>possession</i> of a journey, </h4> 
-            <h4> down to its last nook and cranny,</h4>
-            <h4> as when we are busy with <i>preparations</i> for it.&rdquo;</h4>
-            <footer>- Yukio Mishima</footer>
-        </blockquote>
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow reveal">About</p>
+        <h1 class="reveal">Bjørn Sødal</h1>
     </div>
+</section>
 
-    <!-- My background -->
-    <div id="Background-About">
-    <h4> Who am I?</h4>
-    <p> I am Bjørn Sødal, a software developer.</p>
-    <p> My technical passions reside in respective fields associated with remote machinery and cybersecurity:</p>
-    <ul>
-	<li>ROV and UAV Development</li> 
-        <li>Embedded Systems Development</li>
-        <li>Computer Vision and Machine Vision</li>
-        <li>Augmented Reality</li>
-        <li>Signal Processing</li>
-        <li>Software Security</li>
-    </ul>
-    <p> I am currently undertaking a Bachelor's degree in Computer Science at the University of Agder, Grimstad (UiA).</p>
-    </div>
+<section class="section section--flush-top">
+    <div class="container about">
+        <div class="about__portrait reveal">
+            <div class="media-placeholder media-placeholder--portrait" data-label="Portrait">
+                <!-- Replace with: <img src="/img/portrait.jpg" alt="Bjørn Sødal" /> -->
+            </div>
+        </div>
 
-    <!-- Contanct info -->
-    <div id="Contact-About">
-        <h4> Contact me </h4>
-        <p> Feel free to reach out to me via email at <a href="mailto:bjornsodal@gmail.com">bjornsodal@gmail.com</a>. </p>
-        <p> You may also want to visit my <a href="https://github.com/BjarkanDev">GitHub</a> profile, or my <a href="https://www.linkedin.com/in/bj%C3%B8rn-s%C3%B8dal-247990354/">LinkedIn</a> profile.</p>
+        <div class="about__text prose reveal">
+            <p class="lead">I&rsquo;m an engineer who likes machines that leave the desk &mdash; things that float, dive and fly, and the software that lets them see and decide for themselves.</p>
+            <p>My background is in computer engineering, and I&rsquo;m now taking a master&rsquo;s degree focused on the Internet of Things. Most of my time goes into machine and computer vision, digital signal processing and embedded programming, and into putting those together in UAV, ROV and ASV systems.</p>
+            <p>Outside coursework I&rsquo;m involved in <a href="https://github.com/SeaBotics" rel="noopener">SeaBotics</a>, the University of Agder&rsquo;s student organisation building autonomous vessels for competition.</p>
+
+            <h2 class="h-small">Focus areas</h2>
+            <ul class="pill-list">
+                <li>Computer &amp; machine vision</li>
+                <li>Digital signal processing</li>
+                <li>Embedded programming</li>
+                <li>Internet of Things</li>
+                <li>UAV, ROV &amp; ASV development</li>
+            </ul>
+        </div>
     </div>
-    
-</div>
+</section>
+
+<section class="section section--tinted">
+    <div class="container container--narrow">
+        <header class="section-head reveal">
+            <p class="eyebrow">Path so far</p>
+            <h2>Education</h2>
+        </header>
+
+        <ol class="timeline">
+            <li class="timeline__item reveal">
+                <p class="timeline__when">Ongoing</p>
+                <h3>Master of Science &mdash; Internet of Things</h3>
+                <p class="timeline__where"><!-- TODO: university and expected year -->&nbsp;</p>
+            </li>
+            <li class="timeline__item reveal">
+                <p class="timeline__when"><!-- TODO: years -->Completed</p>
+                <h3>Bachelor of Science &mdash; Computer Engineering</h3>
+                <p class="timeline__where">University of Agder, Grimstad</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="section quote-section">
+    <div class="container container--narrow">
+        <figure class="quote reveal">
+            <blockquote>
+                <p>&ldquo;At <em>no</em> time are we ever in such complete <em>possession</em> of a journey, down to its last nook and cranny, as when we are busy with <em>preparations</em> for it.&rdquo;</p>
+            </blockquote>
+            <figcaption>Yukio Mishima</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section section--tinted" id="contact">
+    <div class="container container--narrow center">
+        <header class="section-head reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Say hello</h2>
+            <p class="section-head__lead">Open to collaboration, thesis-related projects and roles in embedded, vision and autonomy.</p>
+        </header>
+
+        <ul class="contact-list reveal">
+            <li>
+                <a href="mailto:bjornsodal@gmail.com">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" /><path d="M3 6l9 7 9-7" /></svg>
+                    <span>bjornsodal@gmail.com</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/BjarkanDev" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg>
+                    <span>GitHub</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/bj%C3%B8rn-s%C3%B8dal-247990354/" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" /><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7" /></svg>
+                    <span>LinkedIn</span>
+                </a>
+            </li>
+            <li>
+                <a href="/files/bjorn-sodal-cv.pdf" download>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16" /></svg>
+                    <span>Download CV (PDF)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://berkanan.no/sitemap.xml
