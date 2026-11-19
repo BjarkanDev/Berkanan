@@ -1,28 +1,19 @@
-/* ==========================================================================
-   Berkanan — site.css
-   Light theme "Classic marine" (A) · Dark theme "Night sailing" (C)
-   ========================================================================== */
-
-/* ---------- Fonts (self-hosted, SIL OFL 1.1) ---------- */
 @font-face { font-family: "Cardo"; src: url("../fonts/cardo-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Cardo"; src: url("../fonts/cardo-italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
 @font-face { font-family: "Inter"; src: url("../fonts/inter-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Inter"; src: url("../fonts/inter-medium.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
 
-/* ---------- Design tokens ---------- */
 :root {
-  /* Palette A — Classic marine */
   --ivory: #F7F3EC;
   --ivory-2: #EFE8DC;
   --mist: #DCE4EC;
   --sand: #E8DCCB;
   --gold: #B08D3C;
-  --gold-deep: #7D5F1D;      /* text-safe gold on ivory */
+  --gold-deep: #7D5F1D;
   --navy: #1F2A44;
   --ink: #2B3245;
   --slate: #5B6274;
 
-  /* Semantic (light) */
   --bg: var(--ivory);
   --bg-alt: var(--ivory-2);
   --surface: #FFFDF9;
@@ -39,11 +30,9 @@
   --btn-solid-text: var(--ivory);
   --header-bg: rgba(247, 243, 236, 0.92);
 
-  /* Type */
   --font-serif: "Cormorant Garamond", "Cardo", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --font-sans: "Jost", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 
-  /* Layout */
   --container: 1160px;
   --container-narrow: 760px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
@@ -52,7 +41,6 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 
-/* Palette C — Night sailing */
 :root[data-theme="dark"] {
   --bg: #141B2D;
   --bg-alt: #1B2439;
@@ -71,7 +59,6 @@
   --header-bg: rgba(20, 27, 45, 0.9);
 }
 
-/* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -139,7 +126,6 @@ code { font-size: .9em; }
 }
 .skip-link:focus { top: 1rem; }
 
-/* ---------- Layout ---------- */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
 .container--narrow { max-width: var(--container-narrow); }
 
@@ -147,7 +133,6 @@ code { font-size: .9em; }
 .section--tinted { background: var(--bg-alt); }
 .section--flush-top { padding-top: 0; }
 
-/* Thin gold rule between consecutive sections */
 .section + .section:not(.section--tinted)::before,
 .section--tinted + .section::before {
   content: ""; position: absolute; top: 0; left: 50%;
@@ -158,7 +143,6 @@ code { font-size: .9em; }
 .section-head { text-align: center; max-width: 680px; margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
 .section-head__lead { color: var(--text-muted); margin-top: -.2em; }
 
-/* ---------- Eyebrow ---------- */
 .eyebrow {
   font-family: var(--font-sans);
   font-size: .75rem;
@@ -172,7 +156,6 @@ code { font-size: .9em; }
 .section-head .eyebrow::before,
 .section-head .eyebrow::after { content: ""; width: 28px; height: 1px; background: var(--line); }
 
-/* ---------- Buttons & links ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 48px; padding: .8rem 1.8rem;
@@ -197,7 +180,6 @@ code { font-size: .9em; }
 .link-arrow::after { content: "→"; transition: transform .3s var(--ease); }
 .link-arrow:hover::after { transform: translateX(4px); }
 
-/* ---------- Header ---------- */
 .site-header {
   position: fixed; inset: 0 0 auto; z-index: 50;
   height: var(--header-h);
@@ -254,7 +236,6 @@ body:not(.has-hero) .site-header {
 .nav-open .nav-toggle span:first-child { transform: rotate(45deg); }
 .nav-open .nav-toggle span:last-child { transform: rotate(-45deg); }
 
-/* Header text over a playing hero video */
 body.has-hero.hero-video-on .site-header:not(.is-scrolled) { --text-strong: #F7F3EC; }
 body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke: #E3C989; }
 
@@ -276,7 +257,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
   .brand__name { font-size: 1rem; letter-spacing: .22em; }
 }
 
-/* ---------- Hero ---------- */
 .hero {
   position: relative; isolation: isolate;
   min-height: min(100svh, 920px);
@@ -295,7 +275,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
     radial-gradient(ellipse 45% 35% at 85% 72%, #1E2A45, transparent 72%),
     var(--bg);
 }
-/* Fine horizon lines — a nod to sails and sea charts */
 .hero::after {
   content: ""; position: absolute; inset: auto 0 18% 0; height: 1px; z-index: -1;
   background: linear-gradient(90deg, transparent, var(--line), transparent);
@@ -333,7 +312,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 }
 @keyframes scroll-line { to { top: 100%; } }
 
-/* ---------- Page hero (inner pages) ---------- */
 .page-hero {
   padding-block: calc(var(--header-h) + clamp(3.5rem, 8vw, 6rem)) clamp(3rem, 6vw, 4.5rem);
   text-align: center;
@@ -342,7 +320,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .page-hero__lead { color: var(--text-muted); max-width: 36em; margin-inline: auto; font-size: 1.1rem; }
 .page-hero .btn + .btn { margin-left: .5rem; }
 
-/* ---------- Disciplines ---------- */
 .disciplines {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -358,7 +335,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .discipline h3 { font-size: 1.35rem; margin-bottom: .4em; }
 .discipline p { color: var(--text-muted); margin: 0; font-size: .95rem; }
 
-/* ---------- Feature (alternating text/image) ---------- */
 .feature {
   display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 6vw, 5rem);
   align-items: center; margin-bottom: clamp(4rem, 8vw, 6.5rem);
@@ -371,7 +347,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
   .feature--flip .feature__media { order: 0; }
 }
 
-/* ---------- Media placeholder (until real images are added) ---------- */
 .media-placeholder {
   position: relative; aspect-ratio: 4 / 3; overflow: hidden;
   background:
@@ -392,14 +367,12 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .media-placeholder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
 .media-placeholder:has(img)::after { display: none; }
 
-/* ---------- Tags ---------- */
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0 0 1.6rem; }
 .tags li {
   font-size: .7rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
   color: var(--text-muted); border: 1px solid var(--line-soft); padding: .3rem .7rem;
 }
 
-/* ---------- Portfolio ---------- */
 .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
 .filter {
   font-family: var(--font-sans); font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
@@ -426,7 +399,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .card__links { margin-top: auto; display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .empty-note { text-align: center; color: var(--text-muted); font-style: italic; }
 
-/* ---------- About ---------- */
 .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 5.5rem); align-items: start; }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; } .about__portrait { max-width: 420px; } }
 .prose .lead { font-family: var(--font-serif); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem); line-height: 1.45; color: var(--text-strong); }
@@ -459,7 +431,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .contact-list a:hover { border-color: var(--accent); color: var(--accent-text); }
 .contact-list svg { width: 20px; height: 20px; fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
-/* ---------- Quote ---------- */
 .quote { margin: 0; text-align: center; }
 .quote blockquote { margin: 0; }
 .quote p {
@@ -473,7 +444,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 }
 .quote figcaption::before { content: ""; width: 28px; height: 1px; background: var(--line); }
 
-/* ---------- CTA band ---------- */
 .cta-band { background: var(--navy); color: #E4DFD4; padding-block: clamp(3.5rem, 7vw, 5rem); }
 :root[data-theme="dark"] .cta-band { background: var(--bg-alt); border-top: 1px solid var(--line-soft); }
 .cta-band { --text-strong: #F7F3EC; --accent-text: #E3C989; --btn-solid-bg: #E3C989; --btn-solid-text: #1F2A44; --accent: #E3C989; --bg: #1F2A44; }
@@ -481,7 +451,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .cta-band h2 { margin: 0; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
 .cta-band .eyebrow { margin-bottom: .6rem; }
 
-/* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line-soft); padding-block: 3rem 2.5rem; font-size: .85rem; }
 .site-footer__inner { display: grid; justify-items: center; gap: 1.5rem; text-align: center; }
 .site-footer__brand { display: grid; justify-items: center; gap: .6rem; }
@@ -491,7 +460,6 @@ body.has-hero.hero-video-on .site-header:not(.is-scrolled) .brand__mark { stroke
 .site-footer__links a:hover { color: var(--accent-text); }
 .site-footer__copy { color: var(--text-muted); margin: 0; font-size: .8rem; }
 
-/* ---------- Reveal on scroll (only when JS is running) ---------- */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 

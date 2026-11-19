@@ -1,16 +1,11 @@
-﻿@page "/"
+@page "/"
 @model IndexModel
 @{
     ViewData["Title"] = "Home";
     ViewData["Description"] = "Bjørn Sødal — engineer building software that lets machines see, sense and navigate: embedded systems, computer vision, signal processing and autonomous vessels.";
 }
 
-<!-- ============ Hero ============ -->
 <section class="hero" data-hero>
-    <!--
-        Hero video: drop your files in wwwroot/media/ with these names.
-        Until they exist the hero falls back to the pastel background below.
-    -->
     <video class="hero__video" autoplay muted loop playsinline preload="metadata"
            poster="/media/hero-poster.jpg" aria-hidden="true" data-hero-video>
         <source src="/media/hero.webm" type="video/webm" />
@@ -36,7 +31,6 @@
     </a>
 </section>
 
-<!-- ============ Disciplines ============ -->
 <section class="section" id="disciplines">
     <div class="container">
         <header class="section-head reveal">
@@ -80,7 +74,6 @@
     </div>
 </section>
 
-<!-- ============ Selected work ============ -->
 <section class="section section--tinted">
     <div class="container">
         <header class="section-head reveal">
@@ -90,7 +83,6 @@
 
         <article class="feature reveal">
             <div class="feature__media media-placeholder" data-label="Hugr Optimus">
-                <!-- Replace with: <img src="/img/projects/hugr-optimus.jpg" alt="Hugr Optimus on the water" loading="lazy" /> -->
             </div>
             <div class="feature__body">
                 <p class="eyebrow">SeaBotics &middot; University of Agder</p>
@@ -104,7 +96,6 @@
 
         <article class="feature feature--flip reveal">
             <div class="feature__media media-placeholder" data-label="Traftec VR">
-                <!-- Replace with: <img src="/img/projects/traftec-vr.jpg" alt="Traftec VR simulator" loading="lazy" /> -->
             </div>
             <div class="feature__body">
                 <p class="eyebrow">Bachelor project</p>
@@ -121,7 +112,6 @@
     </div>
 </section>
 
-<!-- ============ Quote ============ -->
 <section class="section quote-section">
     <div class="container container--narrow">
         <figure class="quote reveal">
@@ -133,7 +123,6 @@
     </div>
 </section>
 
-<!-- ============ Contact band ============ -->
 <section class="cta-band">
     <div class="container cta-band__inner reveal">
         <div>

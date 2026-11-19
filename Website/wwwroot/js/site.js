@@ -1,5 +1,3 @@
-﻿// Berkanan — site.js
-// Small, dependency-free enhancements. The site works fully without JavaScript.
 (function () {
     "use strict";
 
@@ -7,11 +5,8 @@
     var body = document.body;
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // ---- Theme toggle (light A / dark C) ---------------------------------
     var themeBtn = document.querySelector("[data-theme-toggle]");
 
-    // CV links: light theme gets the light PDF, dark theme the dark one.
-    // Without JS the href stays on the light version.
     function syncCvLinks(t) {
         document.querySelectorAll("[data-cv-light][data-cv-dark]").forEach(function (a) {
             a.setAttribute("href", a.getAttribute(t === "dark" ? "data-cv-dark" : "data-cv-light"));
@@ -32,7 +27,6 @@
         });
     }
 
-    // ---- Header state ------------------------------------------------------
     var header = document.querySelector("[data-header]");
     var hero = document.querySelector("[data-hero]");
     if (hero) body.classList.add("has-hero");
@@ -42,7 +36,6 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // ---- Mobile navigation -----------------------------------------------
     var navBtn = document.querySelector("[data-nav-toggle]");
     function closeNav() {
         body.classList.remove("nav-open");
@@ -59,7 +52,6 @@
         window.addEventListener("resize", function () { if (window.innerWidth > 760) closeNav(); });
     }
 
-    // ---- Hero video: only reveal once it can actually play ----------------
     var video = document.querySelector("[data-hero-video]");
     if (video) {
         if (reduceMotion) {
@@ -69,13 +61,11 @@
         var showVideo = function () { body.classList.add("hero-video-on"); };
         if (video.readyState >= 2) showVideo();
         video.addEventListener("loadeddata", showVideo, { once: true });
-        // If every <source> fails (files not added yet) the pastel hero stays.
         var sources = video.querySelectorAll("source");
         var last = sources[sources.length - 1];
         if (last) last.addEventListener("error", function () { body.classList.remove("hero-video-on"); });
     }
 
-    // ---- Reveal on scroll --------------------------------------------------
     var reveals = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window) || reduceMotion) {
         reveals.forEach(function (el) { el.classList.add("is-visible"); });
@@ -89,7 +79,6 @@
             });
         }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
         reveals.forEach(function (el, i) {
-            // Gentle stagger for siblings in grids
             var parent = el.parentElement;
             if (parent && (parent.classList.contains("disciplines") || parent.classList.contains("cards"))) {
                 el.style.transitionDelay = (Array.prototype.indexOf.call(parent.children, el) % 3) * 90 + "ms";
@@ -98,7 +87,6 @@
         });
     }
 
-    // ---- Portfolio filter --------------------------------------------------
     var filters = document.querySelector("[data-filters]");
     var cards = document.querySelectorAll("[data-cards] .card");
     var empty = document.querySelector("[data-empty]");
@@ -123,7 +111,6 @@
         });
     }
 
-    // ---- Footer year (keeps static copies current) ------------------------
     var year = document.querySelector("[data-year]");
     if (year) year.textContent = String(new Date().getFullYear());
 })();

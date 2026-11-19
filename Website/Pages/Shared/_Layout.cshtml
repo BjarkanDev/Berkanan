@@ -1,4 +1,4 @@
-﻿@{
+@{
     var title = ViewData["Title"] as string;
     var description = ViewData["Description"] as string
         ?? "Bjørn Sødal — engineer working with embedded systems, computer vision, signal processing and autonomous vessels.";
@@ -16,7 +16,6 @@
     <meta name="description" content="@description" />
     <link rel="canonical" href="@canonical" />
 
-    <!-- Theme: set before paint to avoid a flash of the wrong colour scheme -->
     <script>
         (function () {
             var t = null;
@@ -32,12 +31,10 @@
     <meta name="theme-color" content="#F7F3EC" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141B2D" media="(prefers-color-scheme: dark)" />
 
-    <!-- Icons -->
     <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="~/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="~/apple-touch-icon.png" />
 
-    <!-- Social sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Berkanan" />
     <meta property="og:title" content="@pageTitle" />
