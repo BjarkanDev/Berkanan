@@ -9,11 +9,22 @@
 
     // ---- Theme toggle (light A / dark C) ---------------------------------
     var themeBtn = document.querySelector("[data-theme-toggle]");
+
+    // CV links: light theme gets the light PDF, dark theme the dark one.
+    // Without JS the href stays on the light version.
+    function syncCvLinks(t) {
+        document.querySelectorAll("[data-cv-light][data-cv-dark]").forEach(function (a) {
+            a.setAttribute("href", a.getAttribute(t === "dark" ? "data-cv-dark" : "data-cv-light"));
+        });
+    }
+
     function setTheme(t) {
         root.setAttribute("data-theme", t);
+        syncCvLinks(t);
         try { localStorage.setItem("theme", t); } catch (e) { }
         if (themeBtn) themeBtn.setAttribute("aria-label", t === "dark" ? "Switch to light theme" : "Switch to dark theme");
     }
+    syncCvLinks(root.getAttribute("data-theme") || "light");
     if (themeBtn) {
         setTheme(root.getAttribute("data-theme") || "light");
         themeBtn.addEventListener("click", function () {
